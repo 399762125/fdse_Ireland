@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>Ajax</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!--  安全性验证（用户登录） 已经注释掉--> 
+	<filter>
+		<filter-name>SecurityFilter</filter-name>
+		<filter-class>cn.edu.fudan.software.filter.SecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/admin.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+
+	<!--  字符编码过滤 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>cn.edu.fudan.software.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 爱班首页页面（announcement页面） -->
+	<servlet>
+		<servlet-name>NoticeServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.NoticeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoticeServlet</servlet-name>
+		<url-pattern>/NoticeServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 爱班介绍页面 -->
+	<servlet>
+		<servlet-name>IntroductionServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.IntroductionServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IntroductionServlet</servlet-name>
+		<url-pattern>/IntroductionServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 新闻动态页面 -->
+	<servlet>
+		<servlet-name>NewsServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.NewsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NewsServlet</servlet-name>
+		<url-pattern>/NewsServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 课程 -->
+	<servlet>
+		<servlet-name>CourseServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.CourseServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CourseServlet</servlet-name>
+		<url-pattern>/CourseServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- 特色活动页面 -->
+	<servlet>
+		<servlet-name>ActivityServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.ActivityServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ActivityServlet</servlet-name>
+		<url-pattern>/ActivityServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 人物志页面 -->
+	<servlet>
+		<servlet-name>PeopleServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.PeopleServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PeopleServlet</servlet-name>
+		<url-pattern>/PeopleServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 师资队伍页面 -->
+	<servlet>
+		<servlet-name>TeacherServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.TeacherServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TeacherServlet</servlet-name>
+		<url-pattern>/TeacherServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 爱班相册页面 -->
+	<servlet>
+		<servlet-name>AlbumServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.AlbumServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AlbumServlet</servlet-name>
+		<url-pattern>/AlbumServlet</url-pattern>
+	</servlet-mapping>
+
+<!-- ============以下为后台管理页面===================================== -->	
+	
+	<!-- 后台登陆页面 -->
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 后台登出页面 -->
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>cn.edu.fudan.software.servlet.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+</web-app>
+

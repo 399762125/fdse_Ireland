@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	width:868px;
+	position:relative;
+	background-color:#FFF;
+	float:left;
+	margin:0px;
+	margin-top:-14px;
+}
+cite{
+	text-align:right;
+}
+span{
+	font-family:"悦黑";
+}
+.contenthead{
+	font-size:20px;
+	height:30px;
+	width:868px;
+	vertical-align:middle;
+	font-family:"悦黑";
+}
+.courseheader{
+	position:relative;
+	float:left;
+	width:870px;
+	height:67px;
+	background-color:transparent;
+	background-image:url(../Img/SHeader.png);
+}
+.headerlogo{
+	position:relative;
+	float:left;
+	font-size:14px;
+	color:#FFF;
+	font-family:"幼圆";
+	font-weight:600;
+	margin-left:60px;
+	margin-top:38px;
+}
+.courseodd{
+	width:868px;
+	height:110px;
+	position:relative;
+	float:left;
+	background-color:#FFF;
+}
+.courseeven{
+	width:868px;
+	height:110px;
+	position:relative;
+	float:left;
+	background-color:#EBEBEB;
+}
+.courseimg{
+	position:relative;
+	float:left;
+	width:143px;
+	height:105px;
+	max-width:143px;
+	_width:143px;
+	margin-right:5px;
+}
+.coursecontent{
+	position:relative;
+	float:left;
+	width:680px;
+	height:105px;
+	margin-top:5px;
+	font-size:14px;
+}
+.coursefooter{
+	float:left;
+	width:868px;
+	height:27px;
+	position:relative;
+	background-color:#EBEBEB;
+}
+.coursefooter span{
+	text-align:right;
+	position:relative;
+	float:right;
+	margin-right:50px;
+}

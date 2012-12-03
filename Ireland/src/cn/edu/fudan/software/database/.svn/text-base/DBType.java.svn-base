@@ -1,0 +1,12 @@
+package cn.edu.fudan.se.database;
+
+public interface DBType 
+{
+    static int ONTOLIB  = 1;   
+    static int ONTOAPP  = 2;
+    static int GIS  = 3;
+    static int sql  = 4;
+    static int WORKFLOW  = 5;
+    static int svnm  = 6;
+    static int svnservice  = 7;
+}

@@ -1,0 +1,86 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+body{
+	width:868px;
+	position:relative;
+	background-color:#FFF;
+	float:left;
+	margin:0px;
+	margin-top:-14px;
+}
+cite{
+	text-align:right;
+}
+span{
+	font-family:"悦黑";
+}
+.contenthead{
+	font-size:15px;
+	height:30px;
+	vertical-align:middle;
+	font-family:"悦黑";
+}
+.newsheader{
+	position:relative;
+	float:left;
+	width:870px;
+	height:67px;
+	background-color:transparent;
+	background-image:url(../Img/SHeader.png);
+}
+.headerlogo{
+	position:relative;
+	float:left;
+	font-size:17px;
+	color:#FFF;
+	font-family:"幼圆";
+	font-weight:600;
+	margin-left:60px;
+	margin-top:38px;
+}
+.newsodd{
+	width:868px;
+	height:140px;
+	position:relative;
+	float:left;
+	background-color:#FFF;
+}
+.newseven{
+	width:868px;
+	height:140px;
+	position:relative;
+	float:left;
+	background-color:#EBEBEB;
+}
+.newsimg{
+	position:relative;
+	float:left;
+	width:143px;
+	height:140px;
+	max-width:143px;
+	_width:143px;
+	margin-right:5px;
+}
+.newscontent{
+	position:relative;
+	float:left;
+	width: 700px;
+	height:140px;
+	margin-top:0px;
+	font-size:12px;
+	
+}
+.newsfooter{
+	float:left;
+	width:868px;
+	height:27px;
+	position:relative;
+	background-color:#EBEBEB;
+}
+.newsfooter span{
+	text-align:right;
+	position:relative;
+	float:right;
+	margin-right:50px;
+}

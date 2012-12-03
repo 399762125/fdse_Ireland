@@ -1,0 +1,144 @@
+package cn.edu.fudan.se.database;
+import java.sql.*;
+
+import cn.edu.fudan.se.config.PropertityUtil;
+
+
+/**
+ * This class is used to connect MySql, and execute SQL By Chen Yewang
+ */
+
+
+public class DBConn {
+
+//<<<<<<< DBConn.java
+	private static final String urllib = "jdbc:mysql://127.0.0.1/ontolib?useUnicode=true&characterEncoding=UTF-8";
+	private static final String urlapp = "jdbc:mysql://127.0.0.1/ontoapp?useUnicode=true&characterEncoding=UTF-8";
+	private static final String urlgis = "jdbc:mysql://127.0.0.1/gis?useUnicode=true&characterEncoding=UTF-8";
+	//private static final String urlsql = "jdbc:microsoft:sqlserver://192.168.7.74:1433;DatabaseName=ResourceService";
+	private static final String urlsql = "jdbc:mysql://127.0.0.1/resourceservice?useUnicode=true&characterEncoding=UTF-8";
+	private static final String urlworkflow = "jdbc:mysql://127.0.0.1/workflow?useUnicode=true&characterEncoding=UTF-8";
+	private static final String svnm = "jdbc:mysql://127.0.0.1/svnm?useUnicode=true&characterEncoding=UTF-8";	//>>>>>>> 1.2
+	private static String svnservice = "jdbc:mysql://"+"127.0.0.1/websvn?useUnicode=true&characterEncoding=UTF-8";	//>>>>>>> 1.2
+	
+	private static final String userName = PropertityUtil.getPropertity("db_userName");
+	private static final String password = PropertityUtil.getPropertity("db_passWord");
+
+	public DBConn() {
+
+		svnservice="jdbc:mysql://"+PropertityUtil.getPropertity("mysql_db")+"?useUnicode=true&characterEncoding=UTF-8";
+	}
+
+	public static Connection getDBConnection(int DataBaseType) 
+	{
+		Connection conn = null;
+		String url;
+		
+		if (DataBaseType == DBType.ONTOLIB)
+			url = urllib;
+		else if (DataBaseType == DBType.ONTOAPP)
+			url = urlapp;
+		else if (DataBaseType == DBType.GIS)
+			url = urlgis;
+		else if (DataBaseType == DBType.WORKFLOW)
+			url = urlworkflow;
+		else if (DataBaseType == DBType.svnm)
+			url = svnm;
+		else if (DataBaseType == DBType.svnservice)
+			url = svnservice;
+		else if (DataBaseType == DBType.sql)
+		{
+			url = urlsql;
+			try 
+			{
+				//Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver");
+				Class.forName("org.gjt.mm.mysql.Driver").newInstance();
+				conn = DriverManager.getConnection(url, "root", "");
+			} 
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+			}
+			return conn;
+			
+		}
+		else
+			return conn;
+		
+		try {
+			Class.forName("org.gjt.mm.mysql.Driver").newInstance();
+			conn = DriverManager.getConnection(url, userName, password);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+
+	public static void closeDBConnection(Connection conn) {
+		try {
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static ResultSet executeQuery(Connection conn, String sqlQuery){
+		ResultSet rs = null;
+		Statement stmt = null;
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sqlQuery);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rs;
+
+	}
+
+	public static int executeUpdate(Connection conn, String sqlUpdate) {
+		Statement stmt = null;
+		int resultAffected = -1;
+		try {
+			stmt = conn.createStatement();
+			resultAffected = stmt.executeUpdate(sqlUpdate);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return resultAffected;
+	}
+
+	public static void rollBack(Connection conn) {
+		try {
+			conn.rollback();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) throws SQLException 
+	{
+		Connection conn = DBConn.getDBConnection(DBType.svnservice);
+		String sql = "SELECT * FROM loginfo";
+		
+		System.out.println(DBType.svnservice);
+		ResultSet rs = DBConn.executeQuery(conn, sql);
+		
+		try 
+		{
+			while (rs.next()) 
+			{
+				String detail = rs.getString("Time");
+				System.out.println(detail);
+			}
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		} 
+		finally 
+		{
+			DBConn.closeDBConnection(conn);
+		}
+
+	}
+}

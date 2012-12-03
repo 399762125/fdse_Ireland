@@ -1,0 +1,7 @@
+mysql_db= 127.0.0.1/websvn
+db_userName= root
+db_passWord= 123456
+svnHost=http://10.131.252.222:8888/svn/platformservice/
+svn_userName= liuyin
+svn_passWord= 1234
+svn_repositoryType= http

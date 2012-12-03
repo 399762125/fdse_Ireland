@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	width:868px;
+	position:relative;
+	background-color:#FFF;
+	float:left;
+	margin:0px;
+	margin-top:-14px;
+}
+.albumheader{
+	position:relative;
+	float:left;
+	width:870px;
+	height:67px;
+	background-color:transparent;
+	background-image:url(../Img/SHeader.png);
+	z-index:2;
+}
+.headerlogo{
+	position:relative;
+	float:left;
+	font-size:17px;
+	color:#FFF;
+	font-family:"幼圆";
+	font-weight:600;
+	margin-left:60px;
+	margin-top:38px;
+}
+.bigpicture{
+	position:relative;
+	display:inline;
+	float:left;
+	width:870px;
+	height:360px;
+	z-index:1;
+}
+.gallery{
+	position:relative;
+	float:left;
+	width:870px;
+	height:100px;
+	background-color:#666;
+	z-index:1;
+}
+.gallery img{
+	display:inline;
+	margin:10px;
+}
+.gallerypicture{
+	position:relative;
+	float:left;
+	width:100px;
+	height:80px;
+	margin-right:20px;
+	display:inline;
+}
+.picbutton1{
+	position:relative;
+	display:inline;
+	float:left;
+	width:30px;
+	height:30px;
+	margin-top:50px;
+	margin-left:100px;
+}
+.picbutton2{
+	position:relative;
+	display:inline;
+	float:left;
+	width:30px;
+	height:30px;
+	margin-top:50px;
+	margin-left:0px;
+}
+.picturecontent{
+	position:relative;
+	display:inline;
+	float:left;
+	width:440px;
+	height:330px;
+	margin:0px;
+	margin-left:40px;
+	margin-top:10px;
+}
+.discription{
+	position:absolute;
+	display:inline;
+	width:300px;
+	height:300px;
+	margin:0px;
+	margin-top:20px;
+	margin-left:40px;
+}
+.discription span{
+	width:300px;
+	line-height:30px;
+	font-family:"幼圆";
+}

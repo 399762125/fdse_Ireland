@@ -1,0 +1,30 @@
+.roller-container {
+	border:1px solid #acacac;
+	padding:0px 4px 5px 4px;
+	
+	border-radius:5px;
+	
+	width:180px;
+	height:244px;
+}
+
+.roller-item {
+	border:1px solid #dcdcdc;
+	padding:2px 2px 2px 2px;
+	
+	border-radius:5px;
+		
+	font-size:12px;
+	color:#090;
+	height:65px;
+	line-height:20px;
+}
+
+.roller-item a{
+
+	font-size:12px;
+	color:#090;
+	width:150px;
+	word-wrap: break-word;
+	word-break: break-all;
+}
